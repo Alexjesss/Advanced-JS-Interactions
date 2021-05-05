@@ -6,9 +6,10 @@ body{
     padding: 10px;
 }
 
-.image{
+.image {
     height: 250px;
-    background: midnightblue;
+    width: 310px;
+    cursor: pointer;
 }
 
 .poke{
