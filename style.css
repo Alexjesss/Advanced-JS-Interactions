@@ -10,6 +10,19 @@ body{
     height: 250px;
     width: 310px;
     cursor: pointer;
+    position: relative;
+}
+
+.description {
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    display: none;
+}
+
+.description.show {
+    display: block;
 }
 
 .poke{

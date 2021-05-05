@@ -9,11 +9,13 @@ let slides = document.getElementsByClassName('carousel-image');
 let slidePosition = 0;
 let previous = document.getElementById('button-prev');
 let next = document.getElementById('button-next');
-let totalSlides = slides.length;
-console.log(slides);
+
 
 // collage //
 let collageImages = document.querySelectorAll(".image");
+let collageDescriptions = document.querySelectorAll('.description');
+
+
 let img = 0;
 let otherImgs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -54,26 +56,35 @@ function moveNextSlide() {
 
 function resizeImage(e){
 
-    if (img==0){ //Basic function if no enlarged, enlarge click element
+    if (img==0){
         e.style.width = "620px";
         e.style.height = "500px";
         e.style.position = 'absolute';
+        e.style.zIndex = '1';
         img = 1;
+    }
+    else if (img==1) {
+        e.style.width = "310px";
+        e.style.height = "250px";
+        e.style.position = 'absolute';
+        e.style.zIndex = '1';
+        img = 0;
+        otherImgs[e] = 0
+    }
+    else if (img==1 && otherImgs==1)  {
+        e.style.width = "310px";
+        e.style.height = "250px";
+        e.style.position = 'absolute';
+        e.style.zIndex = '1';
+        img = 1
         otherImgs[e] = 1
     }
-    else if (img==1) { //If an image is enlarged, is it this one? If so, resize image
-        e.style.width = "310px";
-        e.style.height = "250px";
-        e.style.position = 'absolute';
-        img = 0;
-        otherImgs[0] = 0
-    }
-    else if (img==1 && otherImgs==1)  { //if enlarged, which? Close other, open current element
-        e.style.width = "310px";
-        e.style.height = "250px";
-        e.style.position = 'absolute';
-        img = 1
-        otherImgs[0] = 1
+    showText()
+}
+
+function showText(){
+    for (let i = 0; i < collageDescriptions.length; i++) {
+        collageDescriptions[i].classList.toggle('description.show');
     }
 }
 
@@ -90,4 +101,5 @@ next.addEventListener('click', () => {
 })
 
 collageImages.forEach(e => {
-    e.addEventListener("click", () =>{resizeImage(e);})})
+    e.addEventListener("click", () =>{resizeImage(e);
+    })})
