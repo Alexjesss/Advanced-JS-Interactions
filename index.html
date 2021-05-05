@@ -14,7 +14,16 @@
     </div>
     <div class="row carousel">
         <div class="col-12 title">I want a working parallax carousel here! Controls are optional.</div>
-        <div class="col-12 carouselContainer"></div>
+        <div class="carousel-buttons">
+            <div class="carousel-button-prev"><</div>
+            <div class="carousel-button-next">></div>
+        </div>
+        <div class="col-12 carouselContainer">
+            <div class="carousel-image"><img src="images/fantasy.jpg" alt="carousel-image"></div>
+            <div class="carousel-image"><img src="images/clouds.jpg" alt="carousel-image"></div>
+            <div class="carousel-image"><img src="images/mountains.jpg" alt="carousel-image"></div>
+            <div class="carousel-image"><img src="images/forest.jpg" alt="carousel-image"></div>
+        </div>
     </div>
     <div class="row collage">
         <div class="col-12 title">I want a collage here, and if I click the image, it will enlarge and give me a short description!</div>
@@ -337,7 +346,7 @@
         </div>
     </div>
 </section>
-<div class="mode">💡</div>
+<div id="mode" class="mode"><img class="toggle" src="images/sun.svg" alt="toggle-icon"></div>
 <script src="script.js"></script>
 </body>
 </html>
