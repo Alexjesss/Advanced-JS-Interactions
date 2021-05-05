@@ -39,7 +39,6 @@ body{
     max-width: 100%;
     position: relative;
     margin: auto;
-    border: black solid 3px;
 }
 
 .carousel-image img{
@@ -48,16 +47,37 @@ body{
     max-width: 800px;
     margin:auto;
     display: block;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.carousel-image.hidden{
-   display: none;
+.carouselContainer .carousel-image,
+.carouselContainer .carousel-image--hidden{
+    display: none;
+}
+
+.carouselContainer .carousel-image--visible{
+    display: block;
 }
 
 .carousel-buttons{
     position: absolute;
     display: flex;
     justify-content: space-between;
+    transform: translate(0px, 1346%);
+    cursor: pointer;
+    text-align: center;
+}
+
+.carousel-button-prev, .carousel-button-next{
+    background-color: ivory;
+    border-radius: 50%;
+    font-weight: bold;
+    border: none;
+    height: 25px;
+    width: 25px;
 }
 
 .title{
