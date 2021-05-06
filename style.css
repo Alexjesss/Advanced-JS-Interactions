@@ -13,22 +13,28 @@ body{
     position: relative;
 }
 
+.large{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    width: 50%;
+    height: 50%;
+}
+
+.imageEnlarged{
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 250px;
+}
+
 .description {
     position: relative;
     font-weight: bold;
     text-align: center;
     z-index: 1;
-
 }
 
-.description-hidden {
-    opacity: 0;
-}
-
-.description-show {
-    opacity: 1;
-    z-index: 1;
-}
 
 .poke{
     font-weight: bold;
@@ -36,7 +42,7 @@ body{
     cursor: pointer;
 }
 
-.hoverImage{
+.hoverImage {
     visibility: hidden;
 }
 
@@ -45,10 +51,10 @@ body{
     pointer-events: none;
 }
 
-.hoverImage{
+.hoverImage {
     display: flex;
     position: fixed;
-    top: 15%;
+    top: 55%;
     left: 53%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -59,6 +65,7 @@ body{
     width: 80px;
     height: 80px;
 }
+
 
 .hoverImage img{
     max-width: 100% !important;

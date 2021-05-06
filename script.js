@@ -13,10 +13,11 @@ let totalSlides = slides.length;
 
 
 // collage //
-let collageImages = document.querySelectorAll(".image");
-let collageDescriptions = document.querySelectorAll('.description');
+let collageImages = document.querySelectorAll(".picture");
+let large = document.getElementById('large');
+let imageEnlarged = document.getElementsByClassName('imageEnlarged');
+let collageDescription = document.getElementById('description');
 
-let imagePosition = 0;
 
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
     el.innerText = randomLetter();
@@ -53,30 +54,6 @@ function moveNextSlide() {
     updateSlides()
 }
 
-function resizeImage(e){
-
-    if (imagePosition == 0){
-        e.style.width = "620px";
-        e.style.height = "500px";
-        e.style.position = 'absolute';
-        e.style.zIndex = '1';
-        imagePosition = 1;
-    }
-    else {
-        e.style.width = "310px";
-        e.style.height = "250px";
-        e.style.zIndex = '0';
-        imagePosition = 0;
-    }
-    showText()
-}
-
-function showText(){
-    for (let i = 0; i < collageDescriptions.length; i++) {
-        collageDescriptions[i].classList.toggle('description-show');
-    }
-}
-
 switchMode.addEventListener('click', () => {
     body.classList.toggle('darkMode');
 })
@@ -89,7 +66,21 @@ next.addEventListener('click', () => {
     moveNextSlide();
 })
 
-collageImages.forEach(e => {
-    e.addEventListener("click", () => {
-    resizeImage(e);
+
+
+window.onclick = function(e) {
+    if (e.target == large) {
+        large.style.display = "none";
+    }
+}
+
+
+
+collageImages.forEach(el => {
+    el.addEventListener("click", (e) => {
+        large.style.display = 'block';
+        imageEnlarged.src = e.target.src;
+        collageDescription.innerHTML = e.target.alt;
+        console.log(e.target.alt);
+        console.log(e.target.src);
     })})
