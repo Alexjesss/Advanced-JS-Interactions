@@ -9,15 +9,14 @@ let slides = document.getElementsByClassName('carousel-image');
 let slidePosition = 0;
 let previous = document.getElementById('button-prev');
 let next = document.getElementById('button-next');
+let totalSlides = slides.length;
 
 
 // collage //
 let collageImages = document.querySelectorAll(".image");
 let collageDescriptions = document.querySelectorAll('.description');
 
-
-let img = 0;
-let otherImgs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let imagePosition = 0;
 
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
     el.innerText = randomLetter();
@@ -56,35 +55,25 @@ function moveNextSlide() {
 
 function resizeImage(e){
 
-    if (img==0){
+    if (imagePosition == 0){
         e.style.width = "620px";
         e.style.height = "500px";
         e.style.position = 'absolute';
         e.style.zIndex = '1';
-        img = 1;
+        imagePosition = 1;
     }
-    else if (img==1) {
+    else {
         e.style.width = "310px";
         e.style.height = "250px";
-        e.style.position = 'absolute';
-        e.style.zIndex = '1';
-        img = 0;
-        otherImgs[e] = 0
-    }
-    else if (img==1 && otherImgs==1)  {
-        e.style.width = "310px";
-        e.style.height = "250px";
-        e.style.position = 'absolute';
-        e.style.zIndex = '1';
-        img = 1
-        otherImgs[e] = 1
+        e.style.zIndex = '0';
+        imagePosition = 0;
     }
     showText()
 }
 
 function showText(){
     for (let i = 0; i < collageDescriptions.length; i++) {
-        collageDescriptions[i].classList.toggle('description.show');
+        collageDescriptions[i].classList.toggle('description-show');
     }
 }
 
@@ -101,5 +90,6 @@ next.addEventListener('click', () => {
 })
 
 collageImages.forEach(e => {
-    e.addEventListener("click", () =>{resizeImage(e);
+    e.addEventListener("click", () => {
+    resizeImage(e);
     })})

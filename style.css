@@ -18,15 +18,54 @@ body{
     font-weight: bold;
     text-align: center;
     z-index: 1;
-    display: none;
+
 }
 
-.description.show {
-    display: block;
+.description-hidden {
+    opacity: 0;
+}
+
+.description-show {
+    opacity: 1;
+    z-index: 1;
 }
 
 .poke{
     font-weight: bold;
+    display: inline;
+    cursor: pointer;
+}
+
+.hoverImage{
+    visibility: hidden;
+}
+
+.poke:hover + .hoverImage {
+    visibility: visible;
+    pointer-events: none;
+}
+
+.hoverImage{
+    display: flex;
+    position: fixed;
+    top: 15%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+}
+
+.hoverImage img{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 0;
 }
 
 .chaser{
