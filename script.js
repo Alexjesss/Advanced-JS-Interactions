@@ -13,8 +13,8 @@ let totalSlides = slides.length;
 
 
 // collage //
-let collageImages = document.querySelectorAll(".picture");
-let large = document.getElementById('large');
+let collageImages = document.querySelectorAll(".image");
+let big = document.querySelector('.big');
 let imageEnlarged = document.getElementsByClassName('imageEnlarged');
 let collageDescription = document.getElementById('description');
 
@@ -68,19 +68,21 @@ next.addEventListener('click', () => {
 
 
 
-window.onclick = function(e) {
-    if (e.target == large) {
-        large.style.display = "none";
-    }
-}
+// window.onclick = function(e) {
+//     if (e.target == large) {
+//         large.style.display = "none";
+//     }
+// }
 
 
 
 collageImages.forEach(el => {
     el.addEventListener("click", (e) => {
-        large.style.display = 'block';
+        big.style.display = 'block';
         imageEnlarged.src = e.target.src;
         collageDescription.innerHTML = e.target.alt;
         console.log(e.target.alt);
         console.log(e.target.src);
-    })})
+        console.log(imageEnlarged.src)
+    });
+});

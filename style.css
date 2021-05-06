@@ -13,18 +13,20 @@ body{
     position: relative;
 }
 
-.large{
+.big{
     display: none;
     position: absolute;
     z-index: 5;
     width: 50%;
     height: 50%;
+    overflow: auto;
 }
 
 .imageEnlarged{
     display: block;
     margin: auto;
     width: 50%;
+    z-index: 10;
     height: 250px;
 }
 
@@ -99,6 +101,12 @@ body{
     max-width: 100%;
     position: relative;
     margin: auto;
+}
+
+.carousel-image{
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel-image img{
