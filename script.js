@@ -44,7 +44,7 @@ collageImages.forEach(el => {
 // not finished yet! //
 
 window.onclick = function(event) {
-    if (event.target == document.body) {
+    if (event.target == body) {
         large.style.display = "none";
     }
 }
