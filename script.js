@@ -6,14 +6,16 @@ let body = document.body;
 // carousel redoing it again...//
 
 
-
-
-
 // collage //
 let collageImages = document.querySelectorAll(".image");
 let large = document.querySelector('.large');
 let imageEnlarged = document.querySelector('.imageEnlarged');
 let collageDescription = document.getElementById('description');
+
+// Pokemon hover //
+
+let pokemonName = document.querySelectorAll('.poke');
+let pokemonImage = document.querySelectorAll('.hoverImage');
 
 
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
@@ -41,6 +43,12 @@ collageImages.forEach(el => {
     });
 });
 
+pokemonName.forEach(el => {
+    el.addEventListener('',() => {
+
+    }
+})
+
 // not finished yet! //
 
 window.onclick = function(event) {
@@ -48,3 +56,5 @@ window.onclick = function(event) {
         large.style.display = "none";
     }
 }
+
+
