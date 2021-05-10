@@ -76,6 +76,7 @@ body{
 
 .chaser{
     width: 50px;
+    position: absolute;
     height: 50px;
     background: red;
     border-radius: 50%;

@@ -17,6 +17,19 @@ let collageDescription = document.getElementById('description');
 let canvas = document.getElementById('canvas');
 let chaser = document.querySelector('.chaser');
 
+canvas.addEventListener('mousemove', moveCircle,true);
+canvas.addEventListener('mouseleave', moveCircle,false);
+
+let mouseX = 0;
+let mouseY = 0;
+
+function moveCircle(e){
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+        chaser.style.left = mouseX + "px";
+        chaser.style.top = mouseY + "px";
+
+}
 
 
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
