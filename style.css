@@ -37,7 +37,6 @@ body{
 }
 
 .header{
-    /*position: fixed;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -57,41 +56,22 @@ body{
 
 .poke{
     font-weight: bold;
+    position: relative;
     display: inline;
     cursor: pointer;
 }
 
-.hoverImage {
-    visibility: hidden;
+.imagePosition{
+    position: absolute;
 }
 
-.poke:hover + .hoverImage {
-    visibility: visible;
-    pointer-events: none;
-}
-
-.hoverImage {
-    display: flex;
-    position: fixed;
-    top: 55%;
-    left: 53%;
-    transform: translate(-50%, -50%);
+.pokemon {
+    display: none;
+    transform: translate(-98%, -50%);
     z-index: 10;
     pointer-events: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 80px;
     height: 80px;
-}
-
-
-.hoverImage img{
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    margin-bottom: 0;
 }
 
 .chaser{

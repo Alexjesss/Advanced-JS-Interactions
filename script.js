@@ -12,10 +12,11 @@ let large = document.querySelector('.large');
 let imageEnlarged = document.querySelector('.imageEnlarged');
 let collageDescription = document.getElementById('description');
 
-// Pokemon hover //
+// circle chasing mouse //
 
-let pokemonName = document.querySelectorAll('.poke');
-let pokemonImage = document.querySelectorAll('.hoverImage');
+let canvas = document.getElementById('canvas');
+let chaser = document.querySelector('.chaser');
+
 
 
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
@@ -37,17 +38,8 @@ collageImages.forEach(el => {
         large.style.display = 'block';
         imageEnlarged.src = e.target.src;
         collageDescription.innerHTML = e.target.alt;
-        console.log(e.target.alt);
-        console.log(e.target.src);
-        console.log(imageEnlarged.src)
     });
 });
-
-pokemonName.forEach(el => {
-    el.addEventListener('',() => {
-
-    }
-})
 
 // not finished yet! //
 
@@ -56,5 +48,18 @@ window.onclick = function(event) {
         large.style.display = "none";
     }
 }
+
+// pokemon hover //
+
+function showImage(id) {
+    document.getElementById(id).style.display="inline";
+}
+
+function hideImage(id) {
+    document.getElementById(id).style.display="none";
+}
+
+
+
 
 
