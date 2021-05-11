@@ -6,6 +6,8 @@ let body = document.body;
 // carousel redoing it again...//
 
 
+
+
 // collage //
 let collageImages = document.querySelectorAll(".image");
 let large = document.querySelector('.large');
@@ -24,11 +26,11 @@ let mouseX = 0;
 let mouseY = 0;
 
 function moveCircle(e){
+    requestAnimationFrame(moveCircle);
     mouseX = e.pageX;
     mouseY = e.pageY;
         chaser.style.left = mouseX + "px";
         chaser.style.top = mouseY + "px";
-
 }
 
 
